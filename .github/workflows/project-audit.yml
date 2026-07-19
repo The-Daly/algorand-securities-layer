@@ -1,0 +1,32 @@
+name: Project Audit
+
+# Structural PR/branch check. Runs the dependency-free `npm run check`
+# (project + security-log structural audits). It deliberately does NOT run the
+# TestNet/MainNet release gates — those are separate and are expected to fail
+# until their applicable Critical/High findings are resolved.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Least privilege: the audit only reads repository contents.
+permissions:
+  contents: read
+
+jobs:
+  project-audit:
+    name: project-audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        # actions/checkout v7.0.0 — pinned to full commit SHA
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - name: Set up Node.js 22
+        # actions/setup-node v7.0.0 — pinned to full commit SHA
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+      # No dependency installation: all scripts are dependency-free Node.
+      - name: Structural checks
+        run: npm run check

@@ -1,0 +1,25 @@
+# CODEOWNERS — required reviewers for security-sensitive files.
+#
+# @The-Daly is the repository owner (a GitHub *user* account with admin access) and is
+# therefore a valid code owner. If ownership ever moves to an organization, replace
+# @The-Daly with a team handle (e.g. @The-Daly/security) — an org handle alone is not a
+# valid code owner.
+#
+# Enforced via branch protection: "require review from Code Owners" on `main`.
+# Last match wins, so the broad /.github/ rule is listed after the specific ones it need not override.
+
+# Security policy, audit log, and review playbook
+/SECURITY.md                        @The-Daly
+/SECURITY_AUDIT_LOG.md              @The-Daly
+/docs/SECURITY_REVIEW_PLAYBOOK.md   @The-Daly
+
+# Security / audit / gate scripts
+/scripts/security-audit.mjs         @The-Daly
+/scripts/audit-project.mjs          @The-Daly
+
+# Operating manual and decision log
+/CLAUDE.md                          @The-Daly
+/DECISIONS.md                       @The-Daly
+
+# GitHub automation (workflows + this CODEOWNERS file + templates)
+/.github/                           @The-Daly
