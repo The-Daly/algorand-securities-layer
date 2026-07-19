@@ -8,9 +8,10 @@ _Last updated: 2026-07-19_
 
 ## Active task
 
-`business-validation-round1` — issuer/ASL/developer responsibility matrix + critical
-assumptions register (this session, `claude/business-validation-round1`). Bootstrap
-(`bootstrap-repo`) is complete — merged to `main` as `870e6a7` via PR #1.
+`external-validation-round1` — issuer/provider + developer target shortlist, issuer and
+developer interview scripts, outreach plan, and evidence-log scaffold (this session,
+`claude/external-validation-round1`). Responsibility matrix + assumptions register
+(`business-validation-round1`) merged to `main` as `c4836ab`.
 
 ## Last completed work
 
@@ -23,7 +24,16 @@ assumptions register (this session, `claude/business-validation-round1`). Bootst
   API-confirmed** (D-0012) after the repo went public. Merged via PR #1.
 - **2026-07-19** — `docs/responsibility-matrix.md` and `docs/assumptions-register.md`
   drafted (assumptions register seeded from RISKS.md R-0001–R-0004). Both unvalidated —
-  no issuer, developer, or counsel input yet.
+  no issuer, developer, or counsel input yet. Merged to `main` as `c4836ab`.
+- **2026-07-19** — External-validation package drafted (this session): scored target
+  shortlist (10 issuer/provider targets, 6 developer prospects, all current-primary-
+  source-cited), issuer interview script, developer interview script (validates A-002b
+  independently), outreach plan (nothing sent — every message needs separate founder
+  approval), and an evidence-log scaffold (every target `Not contacted`). RISKS.md
+  updated: R-0005 and R-0009 closed; R-0002 and R-0008 sharpened. **This is desk
+  research, not demand evidence** — A-002a and A-002b remain `Untested` in
+  `docs/assumptions-register.md` and must not be marked otherwise until real outreach
+  or interviews happen.
 
 _(No product, contract, or business-validation deliverables exist yet. Nothing is
 marked complete without evidence in the repo.)_
@@ -54,14 +64,18 @@ marked complete without evidence in the repo.)_
 
 ## Next three actions
 
-1. Founder review of `docs/responsibility-matrix.md` and `docs/assumptions-register.md`
-   (this session's output) — both are unvalidated design positions, not confirmed facts.
-2. **Switch to external evidence:** issuer **interview script**
-   (`docs/business/issuer-interview.md`), a **scored shortlist of 5–10 target
-   issuers/providers** (`docs/business/target-shortlist.md`), and an **outreach plan**
-   (`docs/business/outreach-plan.md`). Not a multi-session binder.
-3. Start `docs/business/evidence-log.md` once outreach produces any response, rejection,
-   or signal, and link it back to the relevant assumptions-register row.
+1. Founder review and approval of this session's package
+   (`docs/business/target-shortlist.md`, `issuer-interview.md`,
+   `developer-interview.md`, `outreach-plan.md`, `evidence-log.md`) before any outreach
+   is sent.
+2. Founder approves Batch 1 outreach messages — two developer/application (Folks
+   Finance, CompX Labs) and two issuer/provider (Quantoz Payments, Archax), sent in
+   parallel, not serialized — one at a time, per `docs/business/outreach-plan.md`.
+   Public channels only, no automation.
+3. Update `docs/business/evidence-log.md` as soon as any outreach produces a response,
+   rejection, or non-response, and link each entry back to the relevant
+   assumptions-register row (A-002a / A-002b especially). Do not change any
+   assumption's status from `Untested` until real evidence — not desk research — exists.
 
 ## Blockers
 

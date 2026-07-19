@@ -7,6 +7,65 @@ All notable changes to ASL are documented here. Format loosely follows
 ## [Unreleased]
 
 ### Added
+- **External-validation package** (`claude/external-validation-round1`):
+  - `docs/business/target-shortlist.md` — issuer/provider targets and developer/
+    application prospects, each with material claims labeled Primary or Secondary
+    source, verified 2026-07-19, scored, and ranked, split into actionable outreach
+    candidates (Sections A/B) vs. competitive/historical/base-rate references that are
+    explicitly not outreach targets (Section C). Includes an explicit "why ASL might be
+    redundant" analysis per candidate and two competitive-reference-only entries
+    (Securitize, Tokeny) that do not currently
+    support Algorand.
+  - `docs/business/issuer-interview.md` — non-leading issuer/provider discovery script
+    covering current workflows, integration cost, chain choice, and the authority-model
+    split, with continue/pivot/stop criteria tied to A-001, A-002a, A-003, A-004, A-005.
+  - `docs/business/developer-interview.md` — non-leading developer/application
+    discovery script validating A-002b independently of issuer-side evidence, with an
+    explicit instruction that general RWA enthusiasm is not evidence.
+  - `docs/business/outreach-plan.md` — public-channel-only outreach plan; Batch 1
+    tests both sides of demand in parallel (two developer/application messages, two
+    issuer/provider messages), draft messages, follow-up schedule, and an explicit
+    statement that nothing is sent without per-message founder approval.
+  - `docs/business/evidence-log.md` — evidence-log scaffold with tightened evidence-
+    strength definitions (a non-response or an agreed call is Weak/Medium, not Strong);
+    every target begins `Not contacted` (desk research is explicitly not logged as
+    demand evidence).
+
+### Research-quality correction (2026-07-19, same PR)
+
+- `docs/business/target-shortlist.md`: added explicit Primary/Secondary source
+  labeling throughout and removed the inaccurate "all entries use current primary
+  sources" claim; corrected Quantoz Payments' chain support from "Algorand only" to
+  "Algorand, Ethereum, Polygon, XRPL, Xahau, Stellar" per Quantoz's own official site,
+  raising its score 10→12/15 and its rank from 2 to 1 (strongest available A-001 test
+  case, not just A-003/A-005); corrected Midas's Signal score down (8→6/15, dropping
+  it from the top three) because a single reported launch-day transaction was being
+  read as sustained trading-volume evidence; corrected CompX Labs' RWA-integration
+  claim down (11→9/15) because the two-issuer-integration claim rests on a coin-data
+  aggregator, not CompX's own documentation as checked; moved Republic to a new
+  Section C (historical/Unverified — no current primary source confirms active
+  Algorand deployment) instead of treating its original 2021-era launch announcement
+  as current status; restructured the document into Section A (actionable
+  issuer/provider candidates), Section B (actionable developer/application prospects),
+  and Section C (competitive/historical/base-rate references, explicitly not outreach
+  targets — abrdn, Securitize, Tokeny, Republic, Pera Wallet); removed "confirmed
+  absence" language for Securitize/Tokeny's lack of Algorand support (corrected to
+  "absence of evidence in sources checked"); recategorized Pera Wallet out of the
+  developer-demand ranking into Section C as a distribution/ecosystem stakeholder, and
+  replaced it in the top three with Tinyman as the strongest available *application*
+  (not wallet) target for compliant-transfer demand-validation.
+- `docs/business/outreach-plan.md`: removed the arbitrary 2-sends/week cap and the
+  Wave 1 (developer) → Wave 2 (issuer) serialization; A-002a and A-002b are now tested
+  in parallel from Batch 1 (Folks Finance, CompX Labs, Quantoz Payments, Archax — two
+  per side, individually sent, each requiring separate founder approval).
+- `docs/business/evidence-log.md`: tightened Strength definitions — a non-response is
+  now explicitly Weak evidence about the channel/message, not evidence the market
+  doesn't want ASL; agreeing to a call is Medium, not Strong; Strong now requires
+  something with real cost/commitment behind it (concrete integration pain with
+  numbers, shared internal workflow detail, sandbox/API access, a decision-maker
+  referral, stated design-partner/pilot interest, or an agreed technical follow-up).
+  Target list and assumption mappings updated to match the corrected shortlist and
+  Batch 1 outreach plan.
 - `docs/responsibility-matrix.md` — issuer / ASL / developer authority & responsibility
   matrix (who owns/performs legal issuance, KYC/KYB, sanctions screening, minting,
   compliant transfer, freeze, clawback, redemption, corporate actions, reporting, vs.
@@ -39,6 +98,13 @@ All notable changes to ASL are documented here. Format loosely follows
   security-sensitive files), and `docs/BRANCH_PROTECTION.md` (required `main` settings).
 
 ### Changed
+- `RISKS.md`: R-0005 (process/source-of-truth) and R-0009 (divergent parallel repo
+  state) marked **Closed** — PR #1 restored the source-of-truth process and `main` is
+  the single authoritative record; the founder-supplied archive is optional reference
+  material only. R-0002 mitigation now explicitly requires issuer-side and
+  developer-side demand to be tested and evidenced separately. R-0008 now states the
+  Markdown release gate is a **procedural** control, partially enforced through CI/
+  branch protection, not a cryptographically tamper-proof one.
 - `ROADMAP.md`: marked `bootstrap-repo` and `pre-merge-hardening` (0.0) and the
   responsibility matrix / assumptions register (0.1/0.2, shared items) **done**, with
   evidence links, now that PR #1 is confirmed merged (`870e6a7`).
