@@ -24,11 +24,11 @@ at least one credible signal of issuer/developer demand. Until then, no producti
   operating system** (SECURITY.md, SECURITY_AUDIT_LOG.md, review playbook, and the
   `audit:security` / `gate:security` / `gate:mainnet` automation) _(PR #1)_
 - [~] `pre-merge-hardening` — `project-audit` CI (Node 22, least-privilege, pinned Action
-  SHAs), `.github/CODEOWNERS`, SEC-008 mitigation path _(PR #1)_. `main` branch protection
-  is **specified but not enforced** (private free-plan repo returns 403) — see next item.
-- [ ] `enable-branch-protection` — enforce `docs/BRANCH_PROTECTION.md` once GitHub Pro is
-  approved (paid) or accept advisory-only; make `project-audit` a *required* check. Blocks
-  full SEC-008 mitigation.
+  SHAs), `.github/CODEOWNERS`, SEC-008 mitigation path, and **enforced `main` branch
+  protection** (API-confirmed, free once the repo went public — D-0013) _(PR #1)_
+- [ ] `require-approval` — once a second trusted GitHub reviewer exists, raise required
+  approvals to 1 and turn on required CODEOWNER review (deferred now because the sole account
+  cannot approve its own PR). Closes the SEC-001/SEC-008 residual.
 - [ ] `harvest-archive` — port the files intentionally excluded from PR #1 from the
   founder-supplied archive, **each on its own small branch/PR** (NOT part of the bootstrap PR):
   `docs/ARCHITECTURE.md`, `docs/PRODUCT_BOUNDARIES.md`, `docs/MVP_ACCEPTANCE.md`, `AGENTS.md`,

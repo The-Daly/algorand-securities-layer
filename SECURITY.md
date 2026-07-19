@@ -14,6 +14,9 @@ Use a [private GitHub security advisory](https://github.com/The-Daly/algorand-se
 - Mock-asset safety does not establish production safety.
 - Documentation review is not an independent smart-contract audit.
 - ASL will not claim production readiness while a release-blocking finding remains open.
+- Repository visibility is not a security boundary: no secrets, keys, private issuer
+  material, PII, or confidential legal documents may be committed whether the repository
+  is public or private.
 
 ## Release boundaries
 

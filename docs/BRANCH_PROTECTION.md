@@ -9,14 +9,15 @@ control, not a cryptographic one).
 | Setting | Value |
 | --- | --- |
 | Require a pull request before merging | **On** |
-| Required approvals | **1** |
+| Required approvals | **0** for now — solo account (PR #1 is authored by `The-Daly`, which cannot self-approve). Raise to **1** when a second trusted reviewer is added. |
 | Dismiss stale approvals on new commits | **On** |
-| Require review from Code Owners | **On** (see [`.github/CODEOWNERS`](../.github/CODEOWNERS)) |
-| Require status checks to pass | **On** — required check: **`project-audit`** (runs `npm run check`) |
+| Require review from Code Owners | **Advisory** — CODEOWNERS auto-requests review; turn **On** with the required approval once a second reviewer exists. |
+| Require status checks to pass | **On** — required check: **`project-audit`** (runs `npm run check`); **strict** (branch must be up to date) |
 | Require conversation resolution before merging | **On** |
+| Require linear history | **On** (compatible with squash merge) |
 | Block force pushes | **On** (`allow_force_pushes: false`) |
 | Block branch deletion | **On** (`allow_deletions: false`) |
-| Include administrators (`enforce_admins`) | **Off** — admins may bypass to merge the initial PR; do not rely on this for routine work |
+| Include administrators (`enforce_admins`) | **On** — protection applies to admins too |
 
 **Do not** add `gate:security` or `gate:mainnet` as required PR checks — they intentionally
 fail until their applicable findings are resolved. `project-audit` (`npm run check`) is the
@@ -33,17 +34,18 @@ gh api -X PUT repos/The-Daly/algorand-securities-layer/branches/main/protection 
 
 ```json
 {
-  "required_status_checks": { "strict": false, "contexts": ["project-audit"] },
-  "enforce_admins": false,
+  "required_status_checks": { "strict": true, "contexts": ["project-audit"] },
+  "enforce_admins": true,
   "required_pull_request_reviews": {
     "dismiss_stale_reviews": true,
-    "require_code_owner_reviews": true,
-    "required_approving_review_count": 1
+    "require_code_owner_reviews": false,
+    "required_approving_review_count": 0
   },
   "restrictions": null,
   "required_conversation_resolution": true,
   "allow_force_pushes": false,
-  "allow_deletions": false
+  "allow_deletions": false,
+  "required_linear_history": true
 }
 ```
 
@@ -54,26 +56,27 @@ in the table above. Add `project-audit` under "Require status checks to pass."
 
 ## Applied status
 
-**NOT yet enforced.** On 2026-07-19 both the classic branch-protection API and the
-repository rulesets API returned HTTP 403:
+**ENFORCED — API-confirmed on 2026-07-19.** After the founder made the repo **public**
+(D-0013), branch protection became available on the free plan and was applied. `GET
+.../branches/main` returns `protected: true`, and the protection object matches the JSON
+above (strict `project-audit` check, `enforce_admins` on, PR required with 0 approvals,
+conversation resolution, no force-push/deletion, linear history).
 
-> "Upgrade to GitHub Pro or make this repository public to enable this feature."
+Also enabled (free on public repos): secret scanning + push protection, Dependabot alerts
+and automated security fixes, and private vulnerability reporting. Dependency graph is on by
+default for public repositories.
 
-Branch protection / rulesets are unavailable on a **private repository on the free plan**.
-This is a billing limitation, not a permissions one — the operator has repo admin. To
-enforce the settings above, pick one:
+> **Repository visibility is not a security boundary.** Public or private, no secrets, keys,
+> private issuer material, PII, or confidential legal documents may ever be committed. Secret
+> scanning + push protection are a backstop, not a licence to relax this rule.
 
-1. **Upgrade to GitHub Pro** (paid → needs founder approval and a decision record per
-   D-0011), then run the `gh api ... PUT ... /branches/main/protection` command above (or
-   the rulesets equivalent). The operator can apply it in seconds once the plan allows.
-2. **Keep private + unprotected for now.** CODEOWNERS still *auto-requests* `@The-Daly`
-   review on PRs, and the `project-audit` CI still runs on every PR — but neither is
-   *required* to merge. Discipline is manual and **SEC-008 stays Open**.
-3. Making the repo public would enable free protection, but is rejected — D-0007 keeps it private.
+**Deferred (solo-account limitation):** one required approval and required CODEOWNER review
+must be enabled once a second trusted GitHub reviewer is added — an account cannot approve
+its own PR. Tracked as a roadmap task and as SEC-001 residual risk.
 
-Until one of these is done, required-review and required-check enforcement is **advisory**.
 Verify state anytime with:
 
 ```bash
 gh api repos/The-Daly/algorand-securities-layer/branches/main/protection
+gh api repos/The-Daly/algorand-securities-layer/branches/main --jq .protected
 ```

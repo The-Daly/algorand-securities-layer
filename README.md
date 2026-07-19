@@ -23,8 +23,12 @@ identical legal or technical capabilities.
 - ✅ Never represent a real asset without **written issuer authorization and appropriate legal review**.
 - ℹ️ Nothing in this repository is legal or investment advice. Regulatory notes exist to
   generate questions for **qualified counsel**, not to answer them.
+- 🔓 The repository is **public** (D-0013). **Repository visibility is not a security
+  boundary** — no secrets, keys, private issuer material, PII, or confidential legal
+  documents are committed. `main` is branch-protected; see [`docs/BRANCH_PROTECTION.md`](docs/BRANCH_PROTECTION.md).
 
-Self-funded budget: **$300 total.** No single item over $25 without the founder's approval.
+Self-funded budget: **$300 total.** No single item over $25 without the founder's approval;
+planned cumulative spend over $75 needs approval and a decision record (D-0011).
 
 ---
 

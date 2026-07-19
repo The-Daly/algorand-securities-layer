@@ -28,21 +28,23 @@ All notable changes to ASL are documented here. Format loosely follows
   security-sensitive files), and `docs/BRANCH_PROTECTION.md` (required `main` settings).
 
 ### Changed
-- ASL GitHub repository set to **private** (was public on creation).
-- `CLAUDE.md`, `PROJECT_STATUS.md`, `ROADMAP.md`, and `RISKS.md` now bind the security
-  process: read the audit log each session, register new entry points, log findings, run
+- ASL GitHub repository visibility: public on creation → **private** (D-0007) → **public**
+  by founder decision (**D-0013**, supersedes D-0007). **Repository visibility is not a
+  security boundary**; no secrets/keys/PII/confidential material are committed (verified).
+- **`main` branch protection ENABLED and API-confirmed** (free once public): PR-only,
+  required `project-audit` check + strict, `enforce_admins` on, conversation resolution,
+  no force-push/deletion, linear history. Approvals set to 0 and CODEOWNER review left
+  advisory due to the solo-account limitation (raise both when a second reviewer joins).
+- Enabled free public-repo security: secret scanning + push protection, Dependabot alerts +
+  automated security fixes, private vulnerability reporting (dependency graph on by default).
+- `DECISIONS.md`: D-0011 spending thresholds; D-0012 branch protection (now **enforced**);
+  D-0013 repo public; D-0007 marked superseded; D-0009 rationale updated for public repo.
+- `SECURITY_AUDIT_LOG.md`: SEC-001 and SEC-008 → **Mitigating** with residual; REV-003 added.
+- `CLAUDE.md`, `PROJECT_STATUS.md`, `ROADMAP.md`, and `RISKS.md` bind the security process:
+  read the audit log each session, register new entry points, log findings, run
   `npm run check`, and clear the applicable release gate before any release.
-- `ROADMAP.md`: added a **Later / Parking Lot** section so distant features stay out of the
-  active roadmap; separated hard guardrails from parked hypotheses; added a tracked
-  `harvest-archive` task for the files intentionally excluded from this PR.
-- `DECISIONS.md`: D-0011 ratified spending thresholds (>$25 single / >$75 cumulative need
-  approval; $300 ceiling); D-0012 `main` branch protection specified.
-
-### Not done (blocked)
-- **`main` branch protection could not be enforced:** the branch-protection and rulesets
-  APIs return HTTP 403 on a private repo on the free plan. Settings and options are
-  documented in `docs/BRANCH_PROTECTION.md`; enforcement awaits a GitHub Pro upgrade
-  (paid, needs approval) or is accepted as advisory. `project-audit` CI runs regardless.
+- `ROADMAP.md`: added a **Later / Parking Lot** section; separated hard guardrails from
+  parked hypotheses; added tracked `harvest-archive` and `require-approval` tasks.
 
 ### Notes
 - No product, smart-contract, or business-validation deliverables yet. Phase 0.
