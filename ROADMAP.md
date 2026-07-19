@@ -24,7 +24,7 @@ at least one credible signal of issuer/developer demand. Until then, no producti
    `docs/business/developer-interview.md`, `docs/business/outreach-plan.md`,
    `docs/business/evidence-log.md`. **Desk research only — zero outreach sent, zero
    interviews conducted.** A-002a/A-002b remain `Untested`. Next: founder approves
-   Wave 1 outreach messages one at a time.
+   Batch 1 outreach messages (two developer, two issuer, in parallel) one at a time.
 
 ### 0.0 Repository & security foundation
 - [x] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index, **security

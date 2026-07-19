@@ -10,58 +10,81 @@ forum. No purchased contact lists, no scraped personal emails, no cold LinkedIn
 connection spam. No mass automation — every message is sent individually, by the
 founder, after reading the recipient's most recent public activity.
 
-**Volume discipline:** no more than 2 new outreach sends per week during Phase 0. This
-is a validation effort by one solo founder, not a campaign — quality and follow-through
-matter more than count, and CLAUDE.md's stop condition ("no issuer/provider will
-engage") can't be tested honestly if outreach is rushed or spammy.
+**Volume discipline — corrected:** the prior draft of this plan capped outreach at 2
+sends/week and serialized issuer outreach behind developer outreach ("Wave 1" then
+"Wave 2"). Both were wrong. A-002a (issuer/provider demand) and A-002b
+(developer/application demand) are separate assumptions in
+`docs/assumptions-register.md` that must be tested **independently** — waiting for
+developer responses before contacting issuers doesn't protect quality, it just costs
+weeks and makes the two sides' evidence arrive staggered rather than comparably. This
+plan now runs both sides **in parallel from the first batch**. Volume stays small
+because a solo founder can only have so many real conversations at once, not because
+of an arbitrary weekly cap — each batch is sized to what the founder can actually
+follow up on personally, and a new batch starts only once the founder has capacity,
+not on a fixed calendar.
 
 ---
 
-## Sequence and rationale
+## Batch 1 — parallel, four messages total
 
-Ordered by the shortlist scores in `target-shortlist.md`, adjusted for realistic
-reachability (a lower-scored target with a real contact route is sequenced ahead of a
-higher-scored target with no named contact, since the latter isn't actionable yet).
+Two developer/application messages and two issuer/provider messages, sent
+individually (not as a mail-merge), each requiring separate founder approval of the
+final message text before it goes out. Selected from the corrected rankings in
+`target-shortlist.md` (Sections A and B) — the highest-scored reachable target in each
+category, plus the second-highest, so both sides get more than one shot in this first
+round.
 
-### Wave 1 — developer/application side (lower barrier, faster signal)
+**Developer/application side:**
+1. **Folks Finance** (10/15, rank 1 of Section B) — public docs/GitHub/forum contact
+   path (`docs.folks.finance`, `forum.folks.finance`), or X. Primary-confirmed GOLD/
+   SILVER integration gives this message a specific, verifiable hook.
+2. **CompX Labs** (9/15, rank 2 of Section B) — public X (`@Compxlabs`), GitHub
+   discussion on `compx-labs`, or `compx.io`. The message should ask directly about
+   the Meld/Lofty integrations rather than assume them, since the shortlist correction
+   found those claims only Secondary-sourced — the conversation itself resolves the
+   sourcing gap.
 
-Developer prospects are sequenced first: they're more likely to respond quickly via
-public channels (GitHub, X) than regulated financial entities, and A-002b evidence is
-needed independently of A-002a regardless of order.
+**Issuer/provider side:**
+3. **Quantoz Payments** (12/15, rank 1 of Section A) — contact form at quantoz.com.
+   Now the top-ranked issuer/provider target after the shortlist correction confirmed
+   Quantoz operates the same MiCA-regulated tokens across six chains — the strongest
+   available A-001 test case, not just an A-003/A-005 one.
+4. **Archax** (11/15, rank 2 of Section A) — contact form at archax.com. Most
+   institutionally distant from a solo pre-revenue founder of the four, but still the
+   closest structural analogue to ASL's "one interface across many issuers" thesis
+   from the distribution side.
 
-1. **CompX Labs** — public X (`@Compxlabs`) or GitHub discussion on `compx-labs`.
-2. **Folks Finance** — public docs/GitHub (`docs.folks.finance`) contact path, or X.
-3. **Pera Wallet** — GitHub (`perawallet` org) or public X, framed as an ecosystem/
-   distribution conversation, not an integration pitch.
+**Why these four and not the next-ranked ones:** Meld Gold (issuer, 8/15) and Tinyman
+(developer, 7/15) are the next candidates in each section and are reasonable Batch 2
+choices, but four simultaneous new conversations is already a full load for a solo
+founder to personalize and follow up on properly — starting smaller and adding a
+second batch once Batch 1 has responses (or has clearly stalled) keeps outreach
+quality high without re-imposing an arbitrary send-rate cap.
 
-### Wave 2 — issuer/provider side (slower, needs more preparation)
+### Held for a later batch
 
-Only begin once Wave 1 has produced at least one response (or two weeks have passed
-with no response, whichever comes first) — reserve founder time for the harder
-regulated-entity outreach rather than sending everything at once.
+- **Meld Gold, Lofty, Enel/Conio** — issuer/provider targets scored lower and/or
+  carry a clear "already vertically integrated, low fit" concern per the shortlist.
+  Meld Gold is the strongest of these (Primary-confirmed cross-application usage) and
+  the most likely Batch 2 addition.
+- **Tinyman, Vestige, Pact** — developer/application targets held for a later batch;
+  Tinyman is the most likely addition given its categorical fit for A-005
+  (compliant-transfer-at-a-DEX).
+- **Midas** — no named contact found yet; before sending, spend up to 30 minutes of
+  founder time locating a real contact. Do not send to a generic address if none is
+  found — log as "no reachable contact" in the evidence log instead of guessing. Its
+  Signal score was also corrected downward in this pass (a single launch transaction
+  is not sustained-demand evidence), so it's a lower priority than before regardless.
+- **Republic** — moved to Section C (historical/Unverified) in the shortlist
+  correction; do not resume outreach on the strength of the original 2021-era
+  announcement. If founder interest arises, re-verify current Algorand status via a
+  primary source first.
 
-4. **Quantoz Payments** — contact form at quantoz.com. Best first regulated-issuer
-   target: real license, real Algorand commitment, and (unlike Archax) a company whose
-   core business is issuance/compliance, so the interview questions map directly.
-5. **Archax** — contact form at archax.com. Highest-scored target but also the most
-   institutionally distant from a solo pre-revenue founder — send after Quantoz so the
-   founder has one completed regulated-entity conversation for calibration first.
-6. **Midas** — no named contact found yet; before sending, spend up to 30 minutes of
-   founder time locating a real contact (company site, LinkedIn company page, X). Do
-   not send to a generic address if none is found — log as "no reachable contact" in
-   the evidence log instead of guessing.
+### Not scheduled — do not contact
 
-### Not scheduled this round
-
-- **Republic, Enel/Conio, Lofty, Meld Gold** — scored lower and/or have a clearer
-  "already vertically integrated, low fit" concern per the shortlist. Hold until Wave 1
-  and Wave 2 produce results; revisit only if early conversations reveal a reason to
-  prioritize them (e.g., someone in Wave 1/2 names one of them as a needed integration).
-- **abrdn, Securitize, Tokeny** — explicitly marked "do not contact" in the shortlist
-  (abrdn is not the technical decision-maker for the Algorand integration; Securitize/
-  Tokeny are competitive-reference points, not prospects).
-- **Tinyman, Vestige, Pact** — hold for a possible Wave 3 if Wave 1 developer
-  conversations are productive and more DEX-side data points are useful.
+**abrdn, Securitize, Tokeny** — explicitly marked "do not contact" in
+`target-shortlist.md` Section C (competitive/historical/base-rate references, not
+outreach candidates). Do not count these toward any outreach quota or batch.
 
 ---
 
@@ -69,8 +92,10 @@ regulated-entity outreach rather than sending everything at once.
 
 Each draft is a starting point — personalize the first line to the recipient's most
 recent public activity before sending, and do not send verbatim to multiple targets.
+Per this plan's approval rule, the founder approves the **final, personalized** text
+of each message individually — these drafts are not pre-approved templates.
 
-### Draft — developer/application prospects (Wave 1)
+### Draft — developer/application prospects (Folks Finance, CompX Labs)
 
 > Hi [name/team] — I've been looking at how RWA-adjacent apps on Algorand (saw
 > [specific recent activity, e.g. "the Meld Gold/Silver collateral listing" /
@@ -81,15 +106,15 @@ recent public activity before sending, and do not send verbatim to multiple targ
 > integration] actually took to build? Happy to share notes/findings back, no pitch
 > attached.
 
-### Draft — issuer/provider prospects (Wave 2)
+### Draft — issuer/provider prospects (Quantoz Payments, Archax)
 
 > Hi [name/team] — I'm doing early-stage, self-funded research into infrastructure for
 > compliant tokenized assets on Algorand (not pitching a product — genuinely trying to
-> validate whether one is needed). I saw [specific recent activity, e.g. "EURD's
-> launch on Algorand" / "the abrdn fund tokenization with Archax"] and would value 20
-> minutes to understand how you currently handle [specific workflow, e.g. compliance
-> enforcement / multi-chain integration cost] — not asking for a partnership or
-> commitment, just trying to learn from people actually doing this.
+> validate whether one is needed). I saw [specific recent activity, e.g. "EURQ/USDQ's
+> launch on Algorand" / "the abrdn fund tokenization with Quantoz's EURD"] and would
+> value 20 minutes to understand how you currently handle [specific workflow, e.g.
+> keeping compliance consistent across the chains you support] — not asking for a
+> partnership or commitment, just trying to learn from people actually doing this.
 
 ---
 
@@ -97,9 +122,13 @@ recent public activity before sending, and do not send verbatim to multiple targ
 
 - **No response after initial send:** one follow-up at **+10 business days**, brief,
   no new ask.
-- **No response after follow-up:** stop. Log as "no response" in the evidence log
-  (this is itself a data point, not a null result — repeated no-responses across
-  multiple targets is evidence toward the A-002a/A-002b Stop conditions).
+- **No response after follow-up:** stop for that target. Log as "no response" in the
+  evidence log. **Corrected framing:** a no-response is weak evidence about *that
+  channel or that specific message* — a wrong contact route, a bad subject line, an
+  inbox nobody checks — not direct evidence that the market doesn't want ASL. Treat a
+  pattern across *many* targets and *multiple* channels as more informative than any
+  single non-response; see the tightened strength definitions in
+  `evidence-log.md`.
 - **Response received (positive or negative):** log immediately in
   `evidence-log.md`, tie to the relevant assumption row(s), and — if positive —
   schedule the actual interview using `issuer-interview.md` or

@@ -68,9 +68,10 @@ marked complete without evidence in the repo.)_
    (`docs/business/target-shortlist.md`, `issuer-interview.md`,
    `developer-interview.md`, `outreach-plan.md`, `evidence-log.md`) before any outreach
    is sent.
-2. Founder approves Wave 1 outreach messages (CompX Labs, Folks Finance, Pera Wallet)
-   one at a time, per `docs/business/outreach-plan.md` — public channels only, no
-   automation, max 2 sends/week.
+2. Founder approves Batch 1 outreach messages — two developer/application (Folks
+   Finance, CompX Labs) and two issuer/provider (Quantoz Payments, Archax), sent in
+   parallel, not serialized — one at a time, per `docs/business/outreach-plan.md`.
+   Public channels only, no automation.
 3. Update `docs/business/evidence-log.md` as soon as any outreach produces a response,
    rejection, or non-response, and link each entry back to the relevant
    assumptions-register row (A-002a / A-002b especially). Do not change any
