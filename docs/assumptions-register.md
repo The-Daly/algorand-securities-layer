@@ -32,13 +32,12 @@ Status values: `Untested` · `Testing` · `Supported` · `Contradicted` · `Kill
 - **Stop if:** Every issuer interviewed says they'd rather build or already has an
   in-house equivalent with no gap ASL fills.
 
-## A-002 — Two-sided demand exists on Algorand specifically
+## A-002a — Issuer/provider-side demand exists on Algorand specifically
 
-- **Assumption:** There are real issuers/providers *and* real developers who want this,
-  not just a founder hypothesis.
-- **Why load-bearing:** Zero confirmed issuers and zero confirmed developers today (R-0002,
-  High/High). Building anything before this is validated risks the whole $300/solo-builder
-  budget on a market that may not exist.
+- **Assumption:** There are real regulated issuers/providers who want this, not just a
+  founder hypothesis.
+- **Why load-bearing:** Zero confirmed issuers today (R-0002, High/High). Without issuer
+  demand there is no one to build the ASL side of the responsibility matrix for.
 - **Cheapest test:** Issuer interview script + outreach (planned next: `business/issuer-interview.md`,
   `business/target-shortlist.md`, `business/outreach-plan.md`). Cost: founder time only.
 - **Owner:** Founder.
@@ -49,6 +48,32 @@ Status values: `Untested` · `Testing` · `Supported` · `Contradicted` · `Kill
 - **Pivot if:** Interest exists but only for a narrower wedge than the full platform.
 - **Stop if:** No issuer/provider will engage, or the problem described isn't actually
   painful to them.
+- **Correction note (2026-07-19):** split out of the original combined A-002. One
+  interested issuer does not validate developer demand (A-002b) — the two sides must be
+  tested and evidenced independently; neither substitutes for the other.
+
+## A-002b — Developer/application-side demand exists independent of issuer demand
+
+- **Assumption:** There are real developers who would build against ASL's interface if
+  it existed, independent of whether any specific issuer has signed on yet.
+- **Why load-bearing:** Zero confirmed developers today (R-0002, High/High). ASL's thesis
+  requires *both* sides — an issuer with no developers building on top has no reason to
+  pay for infrastructure, and developer enthusiasm with no issuer means there is nothing
+  to integrate against. Neither side alone validates the business.
+- **Cheapest test:** A separate developer/application prospect list and non-leading
+  interview script (planned next session), run independently of the issuer outreach —
+  do not treat issuer conversations as a proxy for developer interest or vice versa.
+- **Owner:** Founder.
+- **Evidence to date:** None. No developer outreach run.
+- **Status:** Untested.
+- **Continue if:** ≥1 developer/application team (distinct from any issuer contact)
+  describes a concrete integration they'd build against a multi-issuer interface, with a
+  specific use case — not just general interest in "tokenized RWAs."
+- **Pivot if:** Developer interest exists only for a single-issuer integration (i.e., they
+  want an SDK for one specific token, not a multi-issuer abstraction) — undercuts the
+  cross-provider thesis (A-001) even if issuer demand is confirmed.
+- **Stop if:** No developer/application team can articulate a reason to build against ASL
+  rather than integrating an issuer's own SDK directly.
 
 ## A-003 — The authority model is legally performable by some real counterparty
 
@@ -66,12 +91,16 @@ Status values: `Untested` · `Testing` · `Supported` · `Contradicted` · `Kill
 - **Evidence to date:** None. Open questions listed in DECISIONS.md but not yet posed
   to anyone qualified to answer them.
 - **Status:** Untested.
-- **Continue if:** A qualified source indicates the split is performable, at least in
-  the mock/TestNet phase, without requiring ASL to hold a license.
+- **Continue if:** A qualified source indicates the split is performable **for the
+  contemplated real production deployment with a regulated issuer** — not merely that it
+  is unobjectionable in mock/TestNet form. Mock/TestNet operation requires no license
+  from anyone and its legality proves nothing about the real operating model; passing
+  mock/TestNet review must not be read as validating A-003.
 - **Pivot if:** The split is performable only if a capability currently assigned to ASL
   (e.g., operating the freeze mechanism) moves fully to the issuer's own systems.
-- **Stop if:** No legal party can perform the model as designed — this is the "Stop"
-  condition already named in ROADMAP's milestone gate table (after 0.2).
+- **Stop if:** No legal party can perform the model as designed for real production use —
+  this is the "Stop" condition already named in ROADMAP's milestone gate table (after
+  0.2).
 
 ## A-004 — Algorand is the right chain for this specific demand
 
@@ -113,12 +142,18 @@ Status values: `Untested` · `Testing` · `Supported` · `Contradicted` · `Kill
 - **Evidence to date:** None.
 - **Status:** Untested.
 - **Continue if:** Counsel indicates executing issuer-defined transfer rules (without
-  authoring the rules) does not itself require a license.
+  authoring the rules) does not itself require a license **in the contemplated real
+  production deployment with a regulated issuer** — a mock/TestNet build requires no
+  such license from anyone and does not test this assumption.
 - **Pivot if:** It's performable only with additional disclaimers/contracts between ASL
   and each issuer (e.g., an explicit processor/vendor agreement) — narrows go-to-market
-  but survives.
+  but survives. **Also pivot if** the transfer controller and/or transaction-submission
+  infrastructure (the hosted relayer question flagged in
+  [responsibility-matrix.md](responsibility-matrix.md)) must be operated by the issuer or
+  a separately licensed operator rather than by ASL — this would still let ASL supply the
+  software/template while removing ASL from the operational/regulated-action path.
 - **Stop if:** Counsel indicates this role alone requires a license ASL cannot obtain
-  within the validation budget/timeline.
+  within the validation budget/timeline, and no operator-shifts-to-issuer pivot resolves it.
 
 ---
 
