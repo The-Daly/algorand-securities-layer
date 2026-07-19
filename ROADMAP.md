@@ -23,6 +23,13 @@ at least one credible signal of issuer/developer demand. Until then, no producti
 - [~] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index, **security
   operating system** (SECURITY.md, SECURITY_AUDIT_LOG.md, review playbook, and the
   `audit:security` / `gate:security` / `gate:mainnet` automation) _(PR #1)_
+- [~] `pre-merge-hardening` — `project-audit` CI (Node 22, least-privilege, pinned Action
+  SHAs), `.github/CODEOWNERS`, `main` branch protection, SEC-008 mitigation path _(PR #1)_
+- [ ] `harvest-archive` — port the files intentionally excluded from PR #1 from the
+  founder-supplied archive, **each on its own small branch/PR** (NOT part of the bootstrap PR):
+  `docs/ARCHITECTURE.md`, `docs/PRODUCT_BOUNDARIES.md`, `docs/MVP_ACCEPTANCE.md`, `AGENTS.md`,
+  and `.github/ISSUE_TEMPLATE/` + `.github/PULL_REQUEST_TEMPLATE.md`. Tracked so they cannot
+  be lost; sequence after the external-evidence package unless a phase gate needs one sooner.
 
 **Standing security requirement (every task, not a one-off):** register new entry points in
 the attack-surface registry, log all findings, run `npm run check`, and clear the applicable

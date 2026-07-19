@@ -28,9 +28,12 @@ const REQUIRED = [
   "docs/README.md",
   "docs/SECURITY_REVIEW_PLAYBOOK.md",
   "docs/CLAUDE_MASTER_PROMPT.md",
+  "docs/BRANCH_PROTECTION.md",
   "scripts/session-start.mjs",
   "scripts/audit-project.mjs",
   "scripts/security-audit.mjs",
+  ".github/workflows/project-audit.yml",
+  ".github/CODEOWNERS",
 ];
 
 // 1) Required files present

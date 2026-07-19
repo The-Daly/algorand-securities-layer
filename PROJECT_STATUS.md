@@ -17,6 +17,8 @@ security log each session, run the gates) becomes functional.
 - **2026-07-19** — Repository created (empty), set to **private**, local clone wired up.
   Skeleton bootstrap **+ security operating system** in review on `claude/bootstrap-repo`
   (security material reused and reconciled from the founder-supplied archive).
+- **2026-07-19** — Pre-merge hardening: `project-audit` CI, `.github/CODEOWNERS`, `main`
+  branch protection (D-0012), spending thresholds ratified (D-0011). In review on PR #1.
 
 _(No product, contract, or business-validation deliverables exist yet. Nothing is
 marked complete without evidence in the repo.)_
@@ -30,6 +32,8 @@ marked complete without evidence in the repo.)_
   6 Critical/High block the mock/TestNet gate; 7 block MainNet, which additionally lacks
   an independent professional audit. (SEC-008 is a Medium note on gate integrity.)
 - Only **Pass 1 (builder self-review)** performed. Passes 2 (adversarial) & 3 (release) pending.
+- Enforcement: `main` branch protection (PR + 1 approval + CODEOWNER review + required
+  `project-audit` check + no force-push/deletion) and `project-audit` CI on every PR.
 
 ## Thesis snapshot
 

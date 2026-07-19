@@ -22,6 +22,10 @@ All notable changes to ASL are documented here. Format loosely follows
   (mock/TestNet), and `gate:mainnet`; added `check` = `audit:project` + `audit:security`.
 - `docs/CLAUDE_MASTER_PROMPT.md` (canonical business-partner prompt, with repo URL) and
   `docs/NEW_CHAT_PROMPT.md` (short continuation prompt) — reused from the founder archive.
+- **Pre-merge hardening:** `.github/workflows/project-audit.yml` (runs `npm run check` on
+  PRs and pushes to `main`; Node 22; `permissions: contents: read`; Actions pinned to full
+  commit SHAs; no paid services or installs), `.github/CODEOWNERS` (`@The-Daly` on
+  security-sensitive files), and `docs/BRANCH_PROTECTION.md` (required `main` settings).
 
 ### Changed
 - ASL GitHub repository set to **private** (was public on creation).
@@ -29,7 +33,11 @@ All notable changes to ASL are documented here. Format loosely follows
   process: read the audit log each session, register new entry points, log findings, run
   `npm run check`, and clear the applicable release gate before any release.
 - `ROADMAP.md`: added a **Later / Parking Lot** section so distant features stay out of the
-  active roadmap; separated hard guardrails from parked hypotheses.
+  active roadmap; separated hard guardrails from parked hypotheses; added a tracked
+  `harvest-archive` task for the files intentionally excluded from this PR.
+- `DECISIONS.md`: D-0011 ratified spending thresholds (>$25 single / >$75 cumulative need
+  approval; $300 ceiling); D-0012 `main` branch protection enabled.
+- Enabled branch protection on `main` (see `docs/BRANCH_PROTECTION.md`).
 
 ### Notes
 - No product, smart-contract, or business-validation deliverables yet. Phase 0.

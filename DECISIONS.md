@@ -16,6 +16,8 @@ open to challenge.
 | D-0008 | 2026-07-19 | Bootstrap workflow: one **empty init commit on `main`**; all real work via `claude/*` branches + PR. | `main` needed a base for PRs; preserves branch+review discipline. | Accepted |
 | D-0009 | 2026-07-19 | Package license set to **UNLICENSED** for now. | Repo is private; no OSS grant decided yet. **Open question** — revisit before any public release. | Proposed |
 | D-0010 | 2026-07-19 | **Authority model:** ASL is least-privilege; issuer/regulated provider keeps final authority; ASL cannot unilaterally mint/seize/transfer/rewrite real assets. | Core positioning ("ship, not cargo"). | Proposed — challenge if it over-centralizes, harms DX, or is legally unperformable |
+| D-0011 | 2026-07-19 | **Spending approval thresholds:** any single expense > $25 needs founder approval; planned cumulative spend > $75 needs founder approval **and** a recorded decision; total self-funded ceiling remains $300. | Founder-ratified; extends D-0006. | Accepted |
+| D-0012 | 2026-07-19 | **`main` branch protection enabled:** PR required, 1 approval, dismiss stale approvals, CODEOWNER review for security-sensitive files, required `project-audit` status check, conversation resolution required, force-push and deletion blocked, `enforce_admins` off. | Make the security OS enforceable — part of the SEC-008 mitigation path. See `docs/BRANCH_PROTECTION.md`. | Accepted |
 
 ## Open questions requiring qualified counsel (not decided here)
 
