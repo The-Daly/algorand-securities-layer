@@ -21,8 +21,8 @@ Status: `not started` · `in progress` · `done`
 | Deliverable | Planned file | Status |
 | --- | --- | --- |
 | Company / customer / problem / wedge | `business/company-wedge.md` | not started |
-| Responsibility matrix (issuer / ASL / developer) | `responsibility-matrix.md` | not started |
-| Critical assumptions register | `assumptions-register.md` | not started |
+| Responsibility matrix (issuer / ASL / developer) | `responsibility-matrix.md` | done |
+| Critical assumptions register | `assumptions-register.md` | done |
 | Regulatory activity & legal-question map | `regulatory-legal-map.md` | not started |
 | Competitor analysis | `business/competitor-analysis.md` | not started |
 | Ideal customer profiles (issuer + developer) | `business/icp.md` | not started |
