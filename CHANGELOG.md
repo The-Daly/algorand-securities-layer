@@ -36,8 +36,13 @@ All notable changes to ASL are documented here. Format loosely follows
   active roadmap; separated hard guardrails from parked hypotheses; added a tracked
   `harvest-archive` task for the files intentionally excluded from this PR.
 - `DECISIONS.md`: D-0011 ratified spending thresholds (>$25 single / >$75 cumulative need
-  approval; $300 ceiling); D-0012 `main` branch protection enabled.
-- Enabled branch protection on `main` (see `docs/BRANCH_PROTECTION.md`).
+  approval; $300 ceiling); D-0012 `main` branch protection specified.
+
+### Not done (blocked)
+- **`main` branch protection could not be enforced:** the branch-protection and rulesets
+  APIs return HTTP 403 on a private repo on the free plan. Settings and options are
+  documented in `docs/BRANCH_PROTECTION.md`; enforcement awaits a GitHub Pro upgrade
+  (paid, needs approval) or is accepted as advisory. `project-audit` CI runs regardless.
 
 ### Notes
 - No product, smart-contract, or business-validation deliverables yet. Phase 0.

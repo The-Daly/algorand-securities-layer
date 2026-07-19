@@ -54,7 +54,25 @@ in the table above. Add `project-audit` under "Require status checks to pass."
 
 ## Applied status
 
-Configured via the API on **2026-07-19** by an admin (`SeanSpeaksDaly`). Verify anytime with:
+**NOT yet enforced.** On 2026-07-19 both the classic branch-protection API and the
+repository rulesets API returned HTTP 403:
+
+> "Upgrade to GitHub Pro or make this repository public to enable this feature."
+
+Branch protection / rulesets are unavailable on a **private repository on the free plan**.
+This is a billing limitation, not a permissions one — the operator has repo admin. To
+enforce the settings above, pick one:
+
+1. **Upgrade to GitHub Pro** (paid → needs founder approval and a decision record per
+   D-0011), then run the `gh api ... PUT ... /branches/main/protection` command above (or
+   the rulesets equivalent). The operator can apply it in seconds once the plan allows.
+2. **Keep private + unprotected for now.** CODEOWNERS still *auto-requests* `@The-Daly`
+   review on PRs, and the `project-audit` CI still runs on every PR — but neither is
+   *required* to merge. Discipline is manual and **SEC-008 stays Open**.
+3. Making the repo public would enable free protection, but is rejected — D-0007 keeps it private.
+
+Until one of these is done, required-review and required-check enforcement is **advisory**.
+Verify state anytime with:
 
 ```bash
 gh api repos/The-Daly/algorand-securities-layer/branches/main/protection
