@@ -48,10 +48,16 @@ for (const f of [
   "DECISIONS.md",
   "RISKS.md",
   "CHANGELOG.md",
+  "SECURITY.md",
+  "SECURITY_AUDIT_LOG.md",
 ]) {
   console.log(`  ${existsSync(join(ROOT, f)) ? "[x]" : "[ ]"} ${f}`);
 }
 console.log("");
+console.log("Also review: every OPEN Critical/High finding in SECURITY_AUDIT_LOG.md,");
+console.log("and register any new entry point in docs/SECURITY_REVIEW_PLAYBOOK.md.");
+console.log("");
 console.log("Guardrails: mock only · no MainNet · no customer money · $300 budget.");
-console.log("Next: run `npm run audit:project`, then produce the preflight report.");
+console.log("Next: run `npm run check`, then produce the preflight report.");
+console.log("Release candidates additionally require `npm run gate:security` (mock/TestNet).");
 console.log("=".repeat(64));

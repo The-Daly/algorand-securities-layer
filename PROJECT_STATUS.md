@@ -8,16 +8,28 @@ _Last updated: 2026-07-19_
 
 ## Active task
 
-`bootstrap-repo` — establish the repository operating skeleton (this PR). Once merged,
-the source-of-truth model (read governance docs each session) becomes functional.
+`bootstrap-repo` — repository operating skeleton **+ security operating system** (this PR,
+`claude/bootstrap-repo`). Once merged, the source-of-truth model (read governance docs +
+security log each session, run the gates) becomes functional.
 
 ## Last completed work
 
 - **2026-07-19** — Repository created (empty), set to **private**, local clone wired up.
-  Skeleton bootstrap in review on branch `claude/bootstrap-repo`.
+  Skeleton bootstrap **+ security operating system** in review on `claude/bootstrap-repo`
+  (security material reused and reconciled from the founder-supplied archive).
 
 _(No product, contract, or business-validation deliverables exist yet. Nothing is
 marked complete without evidence in the repo.)_
+
+## Security posture
+
+- Structural audits **pass**: `npm run check` (project + security-log) is green.
+- Release gates **fail by design**: `npm run gate:security` (mock/TestNet) and
+  `npm run gate:mainnet` are blocked by open Critical/High findings.
+- **Open findings:** 8 (SEC-001…008) in `SECURITY_AUDIT_LOG.md`; 7 are Critical/High.
+  6 Critical/High block the mock/TestNet gate; 7 block MainNet, which additionally lacks
+  an independent professional audit. (SEC-008 is a Medium note on gate integrity.)
+- Only **Pass 1 (builder self-review)** performed. Passes 2 (adversarial) & 3 (release) pending.
 
 ## Thesis snapshot
 
@@ -29,11 +41,12 @@ marked complete without evidence in the repo.)_
 
 ## Next three actions
 
-1. Merge `claude/bootstrap-repo` so future sessions have a working source of truth.
-2. Seed the **critical assumptions register** and **issuer/ASL/developer responsibility
-   matrix** (cheapest artifacts that test whether ASL should exist).
-3. Draft the **issuer interview script + ideal-customer profile** to gather evidence
-   before any smart-contract code.
+1. Founder review + **merge PR #1** (bootstrap + security OS) so future sessions have a
+   working source of truth. Do not merge without approval.
+2. **One timeboxed session:** issuer/ASL/developer **responsibility matrix** +
+   **critical assumptions register**.
+3. **Switch to external evidence:** issuer **interview script**, a **scored shortlist of
+   5–10 target issuers/providers**, and an **outreach plan**. Not a multi-session binder.
 
 ## Blockers
 

@@ -13,8 +13,21 @@ Legend: `[ ]` not started · `[~]` in progress / in review · `[x]` done (eviden
 "why ASL should exist," AND the technical Phase 0 deliverables are complete, AND we have
 at least one credible signal of issuer/developer demand. Until then, no production contracts.
 
-### 0.0 Repository foundation
-- [~] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index _(this PR)_
+**Near-term sequence (next 2–3 sessions, agreed):**
+1. Merge PR #1 (this bootstrap + security OS).
+2. **One timeboxed session** — responsibility matrix + critical assumptions register.
+3. **Then switch to external evidence** — issuer interview script, a scored shortlist of
+   5–10 target issuers/providers, and an outreach plan. Not a multi-session binder.
+
+### 0.0 Repository & security foundation
+- [~] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index, **security
+  operating system** (SECURITY.md, SECURITY_AUDIT_LOG.md, review playbook, and the
+  `audit:security` / `gate:security` / `gate:mainnet` automation) _(PR #1)_
+
+**Standing security requirement (every task, not a one-off):** register new entry points in
+the attack-surface registry, log all findings, run `npm run check`, and clear the applicable
+release gate before any mock/TestNet or future MainNet release. Releases require the
+three-pass review, and the same chat/person cannot claim more than one pass.
 
 ### 0.1 Business validation deliverables
 - [ ] Company / customer / problem / **wedge** definition
@@ -63,10 +76,29 @@ Build only after Phase 0 gate. LocalNet → TestNet. Mock assets only (`mAAPL`).
 - [ ] Mock dividend / corporate action
 - [ ] Indexer reconciliation
 
-## Explicit non-goals (do NOT build)
+## Hard guardrails (never, in this phase)
 
-Exchange · production bridge · launchpad · oracle network · consumer wallet ·
-multi-chain platform · anything touching real securities, customer money, or MainNet.
+No real securities · no customer money · no MainNet deploy · no production bridge or
+real-money liquidity. These are not "later" items — they are out of scope until issuer
+authorization, qualified legal review, and an independent professional audit exist.
+
+## Later / Parking Lot (post-validation hypotheses — NOT scheduled)
+
+Kept out of the active roadmap deliberately. Each may become real **only** after the
+relevant milestone gate, with evidence and a `DECISIONS.md` record — not before:
+
+- Authorized liquidity integrations / market-making
+- Bridges / cross-chain messaging
+- A second chain (e.g. Solana) once the control plane proves chain-neutral
+- Analytics product, dashboards, reporting suite
+- Consumer wallet / end-user application
+- Corporate-action distribution at scale (beyond the mock-dividend slice)
+- Launchpad / self-serve issuance onboarding
+- Oracle / price-feed network
+- Fundraising or grant package (only after the underlying evidence exists)
+
+Anything here that touches real assets or money additionally requires issuer authorization,
+legal review, and a professional security audit.
 
 ---
 

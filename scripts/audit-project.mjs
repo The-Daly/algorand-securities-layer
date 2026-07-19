@@ -21,11 +21,16 @@ const REQUIRED = [
   "DECISIONS.md",
   "RISKS.md",
   "CHANGELOG.md",
+  "SECURITY.md",
+  "SECURITY_AUDIT_LOG.md",
   "package.json",
   ".gitignore",
   "docs/README.md",
+  "docs/SECURITY_REVIEW_PLAYBOOK.md",
+  "docs/CLAUDE_MASTER_PROMPT.md",
   "scripts/session-start.mjs",
   "scripts/audit-project.mjs",
+  "scripts/security-audit.mjs",
 ];
 
 // 1) Required files present

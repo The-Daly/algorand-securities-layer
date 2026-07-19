@@ -12,6 +12,11 @@ evidence arrives. Owner = who must act.
 | R-0005 | **Process risk: source of truth was empty** — operating model ("read the repo each session") could not function. | High → Low | Med | Bootstrap skeleton (this PR) creates the governance docs. Closes once merged. | Cofounder | Mitigating |
 | R-0006 | **Key management / custody security** — any handling of keys or freeze authority is a high-value attack surface. | Med | High | Threat model + key-management model (0.2) before any contract; least-privilege by design. | Founder | Open |
 | R-0007 | **Solo builder + $300 budget** — limited capacity to build infra AND validate a two-sided market. | High | Med | Ruthless scope control; evidence before code; kill/pivot gates in ROADMAP. | Founder | Open |
+| R-0008 | **Unresolved security findings** — 7 open Critical/High in `SECURITY_AUDIT_LOG.md` (GitHub protections, threat model/invariants, key custody, supply chain, professional-audit funding, anti-scam, incident response) block the mock/TestNet and MainNet release gates. | High | High | Drive each finding to Closed via the three-pass review before its target gate; `gate:security` / `gate:mainnet` enforce this automatically. | Founder + tech lead | Open |
+| R-0009 | **Divergent parallel repo state** — a second, more-built version of ASL exists outside this branch (founder-supplied archive with extra docs/CI/templates). Risk of confusion, conflicting decisions, or lost work if efforts fork. | Med | Med | Consolidate on `main` via PR #1; harvest remaining useful archive files as explicit follow-up tasks; treat GitHub `main` as the single source of truth. | Founder + cofounder | Open |
+
+> **Security-specific risks** are tracked in detail (with owner, target gate, and retest
+> evidence) in [`SECURITY_AUDIT_LOG.md`](SECURITY_AUDIT_LOG.md). R-0008 is the summary pointer.
 
 ## Watch list
 

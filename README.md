@@ -38,17 +38,24 @@ Self-funded budget: **$300 total.** No single item over $25 without the founder'
 | [`DECISIONS.md`](DECISIONS.md) | Decision log (what we chose and why). |
 | [`RISKS.md`](RISKS.md) | Risk register. |
 | [`CHANGELOG.md`](CHANGELOG.md) | Human-readable change history. |
-| [`docs/`](docs/README.md) | Phase 0 business + technical deliverables (created as tasks activate). |
-| [`scripts/`](scripts/) | `session:start` and `audit:project` helper scripts. |
+| [`SECURITY.md`](SECURITY.md) | Security policy + private vulnerability reporting. |
+| [`SECURITY_AUDIT_LOG.md`](SECURITY_AUDIT_LOG.md) | Append-only review & findings register (authoritative security record). |
+| [`docs/`](docs/README.md) | Phase 0 deliverables, security review playbook, master prompt. |
+| [`scripts/`](scripts/) | Dependency-free `session:start`, audit, and release-gate scripts. |
 
 ## Working in this repo
 
 ```bash
 npm run session:start   # print startup checklist + repo/git state
-npm run audit:project   # verify required governance files exist and are well-formed
+npm run check           # project + security-log structural audits (run this every session)
+npm run audit:project   # structural governance-file audit only
+npm run audit:security  # security-log structural audit only
+npm run gate:security   # mock/TestNet release gate — FAILS while Critical/High findings are open
+npm run gate:mainnet    # production release gate — additionally requires an independent audit
 ```
 
-Both scripts are dependency-free Node (>=20). There is nothing to `npm install` yet.
+All scripts are dependency-free Node (>=20). There is nothing to `npm install` yet.
+The release gates are **expected to fail** right now — see [`SECURITY_AUDIT_LOG.md`](SECURITY_AUDIT_LOG.md).
 
 ## How work is done
 

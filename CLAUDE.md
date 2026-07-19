@@ -26,9 +26,9 @@ At the start of every session:
 
 1. Ensure the local clone is on the latest `main` (`git fetch` / `git pull`).
 2. Read this `CLAUDE.md` completely.
-3. Read `README.md`, `PROJECT_STATUS.md`, `ROADMAP.md`, `DECISIONS.md`, `RISKS.md`, `CHANGELOG.md`.
-4. Read the `docs/` relevant to the current phase.
-5. Run `npm run session:start` and `npm run audit:project`.
+3. Read `README.md`, `PROJECT_STATUS.md`, `ROADMAP.md`, `DECISIONS.md`, `RISKS.md`, `CHANGELOG.md`, and `SECURITY.md`.
+4. Read the `docs/` relevant to the current phase, and read `SECURITY_AUDIT_LOG.md` — including every open Critical/High finding and the current release-gate status.
+5. Run `npm run session:start` and `npm run check`.
 6. Inspect git branch, status, remotes, and latest commits.
 7. Produce the **preflight report** (below). Do **not** begin implementation until the
    founder approves the recommended task.
@@ -40,7 +40,8 @@ Never pretend the repository has been inspected.
 
 current phase · active roadmap task · latest completed work · product thesis ·
 business thesis · next three actions · blockers · three most important risks ·
-smallest recommended task for the session.
+open Critical/High security findings & release-gate status · smallest recommended
+task for the session.
 
 ## Product thesis (to be validated, not assumed)
 
@@ -76,6 +77,30 @@ Algorand. **The ship, not the cargo.**
 - Budget: **$300 total.** No single item > $25 without founder approval.
 - Never represent a real asset without written issuer authorization + legal review.
 
+## Security operating system
+
+Security is a release process, not a checkbox. Authoritative record: `SECURITY_AUDIT_LOG.md`
+(append-only — never delete a closed finding). Procedure: `docs/SECURITY_REVIEW_PLAYBOOK.md`.
+Policy & private reporting: `SECURITY.md`.
+
+Every session must:
+- Read `SECURITY_AUDIT_LOG.md` and every open Critical/High finding before starting work.
+- Register each new entry point in the playbook's attack-surface registry before its task is complete.
+- Record all findings in the log — including issues fixed during the session.
+- Run `npm run check` (project + security-log structural audits). Run `npm run gate:security`
+  for a mock/TestNet release candidate and `npm run gate:mainnet` for a future production one.
+
+**Three-pass review** — a security-sensitive release commit must pass all three, and the
+same person or chat context cannot claim more than one pass:
+1. **Builder** — entry points, trust boundaries, invariants, and tests.
+2. **Adversarial** — a separate reviewer / isolated context attempts bypasses and abuse.
+3. **Release** — automated checks + an accountable reviewer verify the exact release commit.
+
+Open Critical/High findings block the affected release gate. **Passing tests does not mean
+ASL is secure.** MainNet or real assets additionally require issuer authorization, qualified
+legal review, institutional key management, monitoring, incident response, and an
+**independent professional audit** — none of which exist yet.
+
 ## Business decision filter (answer for every important proposal)
 
 1. Who is the specific user and buyer?
@@ -99,11 +124,16 @@ direct issuer integrations and existing platforms on Solana, Ethereum, and other
 4. Make the smallest coherent change.
 5. Add tests / research evidence / calculations / documentation.
 6. Red-team your own result.
-7. Run relevant tests and `npm run audit:project`.
-8. Update `PROJECT_STATUS.md`, `ROADMAP.md`, and `DECISIONS.md` / `RISKS.md` / `CHANGELOG.md` when they change.
-9. Review the diff for secrets, unrelated work, unsupported claims, scope creep.
-10. Commit and push the branch; open/update a PR when appropriate.
-11. Never force-push or rewrite shared history.
+7. Register every new entry point (contract method, app call, inner transaction, ASA
+   authority, API, webhook, admin role/key, dependency, release step, domain/support
+   channel) in `docs/SECURITY_REVIEW_PLAYBOOK.md`, and log all findings — including ones
+   fixed immediately — in `SECURITY_AUDIT_LOG.md`.
+8. Run relevant tests and `npm run check`. For a release candidate, also run the applicable
+   gate (`npm run gate:security`, or `npm run gate:mainnet`).
+9. Update `PROJECT_STATUS.md`, `ROADMAP.md`, and `DECISIONS.md` / `RISKS.md` / `CHANGELOG.md` / `SECURITY_AUDIT_LOG.md` when they change.
+10. Review the diff for secrets, unrelated work, unsupported claims, scope creep.
+11. Commit and push the branch; open/update a PR when appropriate.
+12. Never force-push or rewrite shared history.
 
 Do not mark roadmap work complete unless **evidence exists in the repository**.
 

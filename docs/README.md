@@ -6,6 +6,16 @@ status mirrors [`ROADMAP.md`](../ROADMAP.md).
 
 Status: `not started` · `in progress` · `done`
 
+## Standing documents (not phase deliverables)
+
+| Document | Purpose | Status |
+| --- | --- | --- |
+| [`SECURITY_REVIEW_PLAYBOOK.md`](SECURITY_REVIEW_PLAYBOOK.md) | Attack-surface registry, threat actors, three-pass review, invariants, anti-scam & incident response | live |
+| [`CLAUDE_MASTER_PROMPT.md`](CLAUDE_MASTER_PROMPT.md) | Canonical business-partner prompt for starting a new chat (repo URL embedded) | live |
+| [`NEW_CHAT_PROMPT.md`](NEW_CHAT_PROMPT.md) | Shorter continuation prompt | live |
+| [`../SECURITY.md`](../SECURITY.md) | Security policy + private vulnerability reporting | live |
+| [`../SECURITY_AUDIT_LOG.md`](../SECURITY_AUDIT_LOG.md) | Append-only review & findings register | live |
+
 ## Business validation
 
 | Deliverable | Planned file | Status |
