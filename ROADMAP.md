@@ -17,8 +17,14 @@ at least one credible signal of issuer/developer demand. Until then, no producti
 1. ~~Merge PR #1 (this bootstrap + security OS).~~ Done — merged as `870e6a7`.
 2. ~~**One timeboxed session** — responsibility matrix + critical assumptions register.~~
    Done — `docs/responsibility-matrix.md`, `docs/assumptions-register.md`.
-3. **Next: switch to external evidence** — issuer interview script, a scored shortlist of
-   5–10 target issuers/providers, and an outreach plan. Not a multi-session binder.
+3. ~~Switch to external evidence — issuer interview script, developer interview
+   script, a scored shortlist of 5–10 target issuers/providers plus ≥5 developer
+   prospects, and an outreach plan.~~ Package drafted —
+   `docs/business/target-shortlist.md`, `docs/business/issuer-interview.md`,
+   `docs/business/developer-interview.md`, `docs/business/outreach-plan.md`,
+   `docs/business/evidence-log.md`. **Desk research only — zero outreach sent, zero
+   interviews conducted.** A-002a/A-002b remain `Untested`. Next: founder approves
+   Wave 1 outreach messages one at a time.
 
 ### 0.0 Repository & security foundation
 - [x] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index, **security
@@ -51,14 +57,17 @@ three-pass review, and the same chat/person cannot claim more than one pass.
 - [ ] Regulatory activity & **legal-question map** (questions for counsel, not answers)
 - [ ] **Competitor analysis** (direct issuer integrations; Solana/Ethereum/other platforms)
 - [ ] Ideal **issuer** and **developer** customer profiles (ICP)
-- [ ] Issuer **interview script + scorecard**
+- [~] Issuer **interview script + scorecard** — script done, `docs/business/issuer-interview.md`; no scorecard yet, no interviews conducted
+- [~] Developer **interview script** (validates A-002b independently) — `docs/business/developer-interview.md`; no interviews conducted
+- [~] **Target shortlist** (5–10 issuer/provider targets + ≥5 developer prospects, scored, ranked, sourced) — `docs/business/target-shortlist.md`; desk research only, zero contact made — see `docs/business/evidence-log.md`
 - [ ] **Design-partner proposal**
 - [ ] Developer **use cases ranked by urgency**
 - [ ] **Pricing / revenue hypotheses**
 - [ ] Basic **costs & unit economics**
 - [ ] **$300 validation budget** plan
 - [ ] **Go-to-market** strategy
-- [ ] Issuer & developer **outreach plan**
+- [~] Issuer & developer **outreach plan** — `docs/business/outreach-plan.md`; nothing sent, requires founder approval per-message
+- [~] **Evidence log** scaffolded — `docs/business/evidence-log.md`; every target currently `Not contacted`
 - [ ] **Traction metrics** definition
 - [ ] **Stage gates, pivot triggers, kill criteria**
 

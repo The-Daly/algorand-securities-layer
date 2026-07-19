@@ -7,6 +7,25 @@ All notable changes to ASL are documented here. Format loosely follows
 ## [Unreleased]
 
 ### Added
+- **External-validation package** (`claude/external-validation-round1`):
+  - `docs/business/target-shortlist.md` — 10 issuer/provider targets and 6 developer/
+    application prospects, each sourced to current primary sources (company sites,
+    Algorand Foundation/algorand.co posts, press) verified 2026-07-19, scored, and
+    ranked. Includes an explicit "why ASL might be redundant" analysis per target and
+    two competitive-reference-only entries (Securitize, Tokeny) that do not currently
+    support Algorand.
+  - `docs/business/issuer-interview.md` — non-leading issuer/provider discovery script
+    covering current workflows, integration cost, chain choice, and the authority-model
+    split, with continue/pivot/stop criteria tied to A-001, A-002a, A-003, A-004, A-005.
+  - `docs/business/developer-interview.md` — non-leading developer/application
+    discovery script validating A-002b independently of issuer-side evidence, with an
+    explicit instruction that general RWA enthusiasm is not evidence.
+  - `docs/business/outreach-plan.md` — public-channel-only outreach sequence (Wave 1
+    developer prospects, Wave 2 issuer/provider prospects), draft messages, follow-up
+    schedule, and an explicit statement that nothing is sent without per-message
+    founder approval.
+  - `docs/business/evidence-log.md` — evidence-log scaffold; every target begins
+    `Not contacted` (desk research is explicitly not logged as demand evidence).
 - `docs/responsibility-matrix.md` — issuer / ASL / developer authority & responsibility
   matrix (who owns/performs legal issuance, KYC/KYB, sanctions screening, minting,
   compliant transfer, freeze, clawback, redemption, corporate actions, reporting, vs.
@@ -39,6 +58,13 @@ All notable changes to ASL are documented here. Format loosely follows
   security-sensitive files), and `docs/BRANCH_PROTECTION.md` (required `main` settings).
 
 ### Changed
+- `RISKS.md`: R-0005 (process/source-of-truth) and R-0009 (divergent parallel repo
+  state) marked **Closed** — PR #1 restored the source-of-truth process and `main` is
+  the single authoritative record; the founder-supplied archive is optional reference
+  material only. R-0002 mitigation now explicitly requires issuer-side and
+  developer-side demand to be tested and evidenced separately. R-0008 now states the
+  Markdown release gate is a **procedural** control, partially enforced through CI/
+  branch protection, not a cryptographically tamper-proof one.
 - `ROADMAP.md`: marked `bootstrap-repo` and `pre-merge-hardening` (0.0) and the
   responsibility matrix / assumptions register (0.1/0.2, shared items) **done**, with
   evidence links, now that PR #1 is confirmed merged (`870e6a7`).
