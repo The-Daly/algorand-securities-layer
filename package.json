@@ -1,0 +1,15 @@
+{
+  "name": "algorand-securities-layer",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Multi-issuer infrastructure for compliant tokenized real-world assets on Algorand. Phase 0 — mock only, no real securities, no MainNet.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "session:start": "node scripts/session-start.mjs",
+    "audit:project": "node scripts/audit-project.mjs"
+  }
+}

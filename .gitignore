@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Environment & secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.mnemonic
+mnemonic.txt
+wallet.json
+secrets.json
+.algokit/
+
+# Local Algorand / AlgoKit artifacts
+.algokit.toml.local
+localnet/
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Test / coverage
+coverage/
+.nyc_output/
