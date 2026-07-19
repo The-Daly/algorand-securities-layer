@@ -7,6 +7,17 @@ All notable changes to ASL are documented here. Format loosely follows
 ## [Unreleased]
 
 ### Added
+- `docs/responsibility-matrix.md` — issuer / ASL / developer authority & responsibility
+  matrix (who owns/performs legal issuance, KYC/KYB, sanctions screening, minting,
+  compliant transfer, freeze, clawback, redemption, corporate actions, reporting, vs.
+  ASL's least-privilege technical role). Every row is an unconfirmed design assumption;
+  open legal/authority questions are called out explicitly, not answered.
+- `docs/assumptions-register.md` — critical assumptions register (A-001…A-005), seeded
+  from `RISKS.md` R-0001–R-0004: moat/replaceable-wrapper risk, two-sided demand,
+  legal/authority-model viability, Algorand-specific demand, and the transfer-execution
+  legal question surfaced while drafting the responsibility matrix. Each row: why it's
+  load-bearing, cheapest test, owner, evidence to date, status, continue/pivot/stop
+  triggers. All rows currently `Untested`.
 - Repository operating skeleton: `README.md`, `CLAUDE.md` (operating manual /
   source of truth), `PROJECT_STATUS.md`, `ROADMAP.md`, `DECISIONS.md`, `RISKS.md`,
   `CHANGELOG.md`.
@@ -28,6 +39,13 @@ All notable changes to ASL are documented here. Format loosely follows
   security-sensitive files), and `docs/BRANCH_PROTECTION.md` (required `main` settings).
 
 ### Changed
+- `ROADMAP.md`: marked `bootstrap-repo` and `pre-merge-hardening` (0.0) and the
+  responsibility matrix / assumptions register (0.1/0.2, shared items) **done**, with
+  evidence links, now that PR #1 is confirmed merged (`870e6a7`).
+- `PROJECT_STATUS.md`: active task moved from `bootstrap-repo` (merged) to
+  `business-validation-round1`; next-three-actions updated to point at the external-
+  evidence package.
+- `docs/README.md`: responsibility matrix and assumptions register marked `done`.
 - ASL GitHub repository visibility: public on creation → **private** (D-0007) → **public**
   by founder decision (**D-0013**, supersedes D-0007). **Repository visibility is not a
   security boundary**; no secrets/keys/PII/confidential material are committed (verified).

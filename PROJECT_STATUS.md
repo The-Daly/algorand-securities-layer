@@ -8,18 +8,22 @@ _Last updated: 2026-07-19_
 
 ## Active task
 
-`bootstrap-repo` — repository operating skeleton **+ security operating system** (this PR,
-`claude/bootstrap-repo`). Once merged, the source-of-truth model (read governance docs +
-security log each session, run the gates) becomes functional.
+`business-validation-round1` — issuer/ASL/developer responsibility matrix + critical
+assumptions register (this session, `claude/business-validation-round1`). Bootstrap
+(`bootstrap-repo`) is complete — merged to `main` as `870e6a7` via PR #1.
 
 ## Last completed work
 
 - **2026-07-19** — Repository created (empty); visibility private (D-0007) → **public**
-  (D-0013); local clone wired up. Skeleton bootstrap **+ security operating system** in
-  review on `claude/bootstrap-repo` (security material reused/reconciled from the archive).
+  (D-0013); local clone wired up. Skeleton bootstrap **+ security operating system**
+  merged to `main` (commit `870e6a7`, via PR #1; security material reused/reconciled
+  from the archive).
 - **2026-07-19** — Pre-merge hardening: `project-audit` CI (passing), `.github/CODEOWNERS`,
   spending thresholds ratified (D-0011). `main` branch protection **enforced and
-  API-confirmed** (D-0012) after the repo went public. In review on PR #1.
+  API-confirmed** (D-0012) after the repo went public. Merged via PR #1.
+- **2026-07-19** — `docs/responsibility-matrix.md` and `docs/assumptions-register.md`
+  drafted (assumptions register seeded from RISKS.md R-0001–R-0004). Both unvalidated —
+  no issuer, developer, or counsel input yet.
 
 _(No product, contract, or business-validation deliverables exist yet. Nothing is
 marked complete without evidence in the repo.)_
@@ -50,17 +54,18 @@ marked complete without evidence in the repo.)_
 
 ## Next three actions
 
-1. Founder review + **merge PR #1** (bootstrap + security OS) so future sessions have a
-   working source of truth. Do not merge without approval.
-2. **One timeboxed session:** issuer/ASL/developer **responsibility matrix** +
-   **critical assumptions register**.
-3. **Switch to external evidence:** issuer **interview script**, a **scored shortlist of
-   5–10 target issuers/providers**, and an **outreach plan**. Not a multi-session binder.
+1. Founder review of `docs/responsibility-matrix.md` and `docs/assumptions-register.md`
+   (this session's output) — both are unvalidated design positions, not confirmed facts.
+2. **Switch to external evidence:** issuer **interview script**
+   (`docs/business/issuer-interview.md`), a **scored shortlist of 5–10 target
+   issuers/providers** (`docs/business/target-shortlist.md`), and an **outreach plan**
+   (`docs/business/outreach-plan.md`). Not a multi-session binder.
+3. Start `docs/business/evidence-log.md` once outreach produces any response, rejection,
+   or signal, and link it back to the relevant assumptions-register row.
 
 ## Blockers
 
-- None once the skeleton merges. (Before merge: source-of-truth model is non-functional
-  because the repo had no files.)
+- None.
 
 ## Budget
 

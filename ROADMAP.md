@@ -14,18 +14,21 @@ Legend: `[ ]` not started · `[~]` in progress / in review · `[x]` done (eviden
 at least one credible signal of issuer/developer demand. Until then, no production contracts.
 
 **Near-term sequence (next 2–3 sessions, agreed):**
-1. Merge PR #1 (this bootstrap + security OS).
-2. **One timeboxed session** — responsibility matrix + critical assumptions register.
-3. **Then switch to external evidence** — issuer interview script, a scored shortlist of
+1. ~~Merge PR #1 (this bootstrap + security OS).~~ Done — merged as `870e6a7`.
+2. ~~**One timeboxed session** — responsibility matrix + critical assumptions register.~~
+   Done — `docs/responsibility-matrix.md`, `docs/assumptions-register.md`.
+3. **Next: switch to external evidence** — issuer interview script, a scored shortlist of
    5–10 target issuers/providers, and an outreach plan. Not a multi-session binder.
 
 ### 0.0 Repository & security foundation
-- [~] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index, **security
+- [x] `bootstrap-repo` — governance docs, `package.json` scripts, `docs/` index, **security
   operating system** (SECURITY.md, SECURITY_AUDIT_LOG.md, review playbook, and the
-  `audit:security` / `gate:security` / `gate:mainnet` automation) _(PR #1)_
-- [~] `pre-merge-hardening` — `project-audit` CI (Node 22, least-privilege, pinned Action
+  `audit:security` / `gate:security` / `gate:mainnet` automation) _(merged via PR #1,
+  commit `870e6a7`)_
+- [x] `pre-merge-hardening` — `project-audit` CI (Node 22, least-privilege, pinned Action
   SHAs), `.github/CODEOWNERS`, SEC-008 mitigation path, and **enforced `main` branch
-  protection** (API-confirmed, free once the repo went public — D-0013) _(PR #1)_
+  protection** (API-confirmed, free once the repo went public — D-0013) _(merged via PR #1,
+  commit `870e6a7`)_
 - [ ] `require-approval` — once a second trusted GitHub reviewer exists, raise required
   approvals to 1 and turn on required CODEOWNER review (deferred now because the sole account
   cannot approve its own PR). Closes the SEC-001/SEC-008 residual.
@@ -42,8 +45,9 @@ three-pass review, and the same chat/person cannot claim more than one pass.
 
 ### 0.1 Business validation deliverables
 - [ ] Company / customer / problem / **wedge** definition
-- [ ] Issuer / ASL / developer **responsibility matrix**
-- [ ] **Critical assumptions register** (each assumption: test + owner + status)
+- [x] Issuer / ASL / developer **responsibility matrix** — `docs/responsibility-matrix.md`
+- [x] **Critical assumptions register** (each assumption: test + owner + status) —
+  `docs/assumptions-register.md`, seeded from R-0001–R-0004
 - [ ] Regulatory activity & **legal-question map** (questions for counsel, not answers)
 - [ ] **Competitor analysis** (direct issuer integrations; Solana/Ethereum/other platforms)
 - [ ] Ideal **issuer** and **developer** customer profiles (ICP)
@@ -59,8 +63,8 @@ three-pass review, and the same chat/person cannot claim more than one pass.
 - [ ] **Stage gates, pivot triggers, kill criteria**
 
 ### 0.2 Technical Phase 0 deliverables (before any production contracts)
-- [ ] Responsibility matrix _(shared with 0.1)_
-- [ ] Critical assumptions register _(shared with 0.1)_
+- [x] Responsibility matrix _(shared with 0.1)_
+- [x] Critical assumptions register _(shared with 0.1)_
 - [ ] Regulatory activity risk map _(shared with 0.1)_
 - [ ] Technical **threat model**
 - [ ] **Instrument domain model**
